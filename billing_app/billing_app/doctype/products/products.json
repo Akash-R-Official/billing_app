@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:productservice_name",
+ "creation": "2024-03-06 19:36:00.251316",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "productservice_name",
+  "category",
+  "product_image",
+  "column_break_sycg",
+  "sku",
+  "description",
+  "section_break_oqra",
+  "buying_price",
+  "stock_quantity",
+  "column_break_jxod",
+  "tax_rate",
+  "min_purchase_quantity",
+  "column_break_shpa",
+  "current_selling_price",
+  "max_purchase_quantity",
+  "section_break_lmyu",
+  "supplier",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "productservice_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product/Service Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "sku",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "SKU",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Category"
+  },
+  {
+   "fieldname": "buying_price",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Buying Price",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "category.category_tax",
+   "fieldname": "tax_rate",
+   "fieldtype": "Read Only",
+   "label": "Tax rate"
+  },
+  {
+   "fieldname": "current_selling_price",
+   "fieldtype": "Int",
+   "label": "Selling Price"
+  },
+  {
+   "fieldname": "stock_quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Stock Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "min_purchase_quantity",
+   "fieldtype": "Int",
+   "label": "Min. Purchase Quantity"
+  },
+  {
+   "fieldname": "max_purchase_quantity",
+   "fieldtype": "Int",
+   "label": "Max. Purchase Quantity"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "product_image",
+   "fieldtype": "Attach Image",
+   "label": "Product Image"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_sycg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_oqra",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jxod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_shpa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_lmyu",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-11 14:38:10.000800",
+ "modified_by": "Administrator",
+ "module": "Billing App",
+ "name": "Products",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

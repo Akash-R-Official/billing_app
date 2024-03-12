@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ORDER-{YYYY}-{MM}-{DD}-{#####}",
+ "creation": "2024-03-06 20:14:32.048584",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "productservice_name",
+  "product_category",
+  "purcased_by",
+  "delivery_date",
+  "discountspromotions",
+  "column_break_egen",
+  "quantity",
+  "payment_terms",
+  "payment_method",
+  "discountspromotions_code",
+  "final_price_section",
+  "product_price",
+  "amended_from",
+  "column_break_tati",
+  "tax_percentage",
+  "column_break_rkls",
+  "discount_percentage",
+  "section_break_dvee",
+  "final_price"
+ ],
+ "fields": [
+  {
+   "fieldname": "productservice_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product/Service Name",
+   "options": "Products",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nCard\nCheque\nCredit\nOther"
+  },
+  {
+   "fieldname": "purcased_by",
+   "fieldtype": "Link",
+   "label": "Purcased By",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "purcased_by.payment_terms",
+   "fieldname": "payment_terms",
+   "fieldtype": "Select",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "discountspromotions",
+   "fieldtype": "Check",
+   "label": "Discounts/Promotions"
+  },
+  {
+   "fieldname": "discountspromotions_code",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Discounts/Promotions code",
+   "options": "Discount Code"
+  },
+  {
+   "fieldname": "column_break_egen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "productservice_name.current_selling_price",
+   "fieldname": "product_price",
+   "fieldtype": "Read Only",
+   "label": "Product Price "
+  },
+  {
+   "fieldname": "final_price_section",
+   "fieldtype": "Section Break",
+   "label": "Product Price"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Purchase",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "productservice_name.category",
+   "fieldname": "product_category",
+   "fieldtype": "Read Only",
+   "label": "Product Category"
+  },
+  {
+   "fetch_from": "discountspromotions_code.discount_percentage",
+   "fieldname": "discount_percentage",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Discount Percentage"
+  },
+  {
+   "fieldname": "column_break_tati",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_dvee",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "final_price",
+   "fieldtype": "Read Only",
+   "label": "Final Price"
+  },
+  {
+   "fetch_from": "productservice_name.tax_rate",
+   "fieldname": "tax_percentage",
+   "fieldtype": "Read Only",
+   "label": "Tax Percentage"
+  },
+  {
+   "fieldname": "column_break_rkls",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-03-11 14:40:47.741633",
+ "modified_by": "Administrator",
+ "module": "Billing App",
+ "name": "Purchase",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

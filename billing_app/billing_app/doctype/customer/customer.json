@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CUS-{YYYY}-{MM}-{DD}-{#####}",
+ "creation": "2024-03-05 19:44:52.471423",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_name_section",
+  "first_name",
+  "column_break_vpax",
+  "middle_name",
+  "column_break_xqmt",
+  "last_name",
+  "customer_full_name_section",
+  "full_name",
+  "contact_information_section",
+  "mobile_number",
+  "email",
+  "column_break_lizl",
+  "alternative_mobile_number",
+  "alternative_email",
+  "address_details_section",
+  "permanent_address",
+  "column_break_clew",
+  "billing_address",
+  "check_if_billing_address_is_different_from_permanent_address",
+  "column_break_mbgf",
+  "shipping_address",
+  "check_if_shipping_address_is_different_from_permanent_address",
+  "other_details_section",
+  "tax_id",
+  "credit_limit",
+  "column_break_spzc",
+  "payment_terms",
+  "customer_category"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Int",
+   "label": "Mobile Number ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "alternative_mobile_number",
+   "fieldtype": "Int",
+   "label": "Alternative Mobile Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "alternative_email",
+   "fieldtype": "Data",
+   "label": "Alternative Email"
+  },
+  {
+   "fieldname": "permanent_address",
+   "fieldtype": "Small Text",
+   "label": "Permanent Address",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "check_if_billing_address_is_different_from_permanent_address",
+   "fieldtype": "Check",
+   "label": "Check if Billing Address is different from Permanent Address"
+  },
+  {
+   "fieldname": "billing_address",
+   "fieldtype": "Small Text",
+   "label": "Billing Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "Tax ID"
+  },
+  {
+   "default": "Upon Receipt",
+   "fieldname": "payment_terms",
+   "fieldtype": "Select",
+   "label": "Payment Terms",
+   "options": "Net 30\nUpon Receipt",
+   "read_only": 1
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Int",
+   "label": "Credit Limit",
+   "read_only": 1
+  },
+  {
+   "default": "New Customer",
+   "fieldname": "customer_category",
+   "fieldtype": "Select",
+   "label": "Customer Category",
+   "options": "New Customer\nWholesaler\nVIP",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_vpax",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xqmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_full_name_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Full Name"
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "column_break_lizl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "column_break_clew",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_mbgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "column_break_spzc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "check_if_shipping_address_is_different_from_permanent_address",
+   "fieldtype": "Check",
+   "label": "Check if Shipping Address is different from Permanent Address"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-11 15:10:20.853007",
+ "modified_by": "Administrator",
+ "module": "Billing App",
+ "name": "Customer",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
