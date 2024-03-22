@@ -1,0 +1,66 @@
+{
+ "cards": [
+  {
+   "card": "Daily Total Quantity"
+  },
+  {
+   "card": "Daily Products Quantity"
+  },
+  {
+   "card": "Daily Services Quantity"
+  },
+  {
+   "card": "Daily Walk-Ins"
+  },
+  {
+   "card": "Daily Total Sales"
+  },
+  {
+   "card": "Daily Product Sales"
+  },
+  {
+   "card": "Daily Service Sales"
+  },
+  {
+   "card": "Daily Appointments"
+  },
+  {
+   "card": "Daily Card Payment"
+  },
+  {
+   "card": "Daily Cash Payment"
+  },
+  {
+   "card": "Daily Other Payment"
+  },
+  {
+   "card": "Monthly New Customers"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Monthly Sales Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Branch Wise Sales Chart",
+   "width": "Half"
+  },
+  {
+   "chart": "Yearly Sales Chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-03-15 20:06:52.431590",
+ "dashboard_name": "Billing",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2024-03-22 17:04:25.191507",
+ "modified_by": "Administrator",
+ "module": "Billing App",
+ "name": "Billing",
+ "owner": "Administrator"
+}

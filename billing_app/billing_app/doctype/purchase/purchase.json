@@ -1,151 +1,148 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:ORDER-{YYYY}-{MM}-{DD}-{#####}",
- "creation": "2024-03-06 20:14:32.048584",
+ "autoname": "format:Bill No.-{####}-{date}",
+ "creation": "2024-03-15 17:03:43.472234",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "productservice_name",
-  "product_category",
-  "purcased_by",
-  "delivery_date",
-  "discountspromotions",
-  "column_break_egen",
-  "quantity",
-  "payment_terms",
+  "purchase_by",
+  "date",
+  "customer_type",
+  "column_break_wamo",
+  "customer_name",
   "payment_method",
-  "discountspromotions_code",
-  "final_price_section",
-  "product_price",
-  "amended_from",
-  "column_break_tati",
-  "tax_percentage",
-  "column_break_rkls",
-  "discount_percentage",
-  "section_break_dvee",
-  "final_price"
+  "branch_name",
+  "section_break_gkur",
+  "list_of_items",
+  "section_break_tdnz",
+  "total_products_quantity",
+  "total_products_price",
+  "column_break_nzsf",
+  "total_services_quantity",
+  "total_services_price",
+  "section_break_c5rq",
+  "total_quantity",
+  "column_break_nuar",
+  "grand_total"
  ],
  "fields": [
   {
-   "fieldname": "productservice_name",
+   "fieldname": "purchase_by",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Product/Service Name",
-   "options": "Products",
-   "reqd": 1
+   "label": "Purchase By",
+   "options": "Customer"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity"
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Purchase Date ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wamo",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "payment_method",
    "fieldtype": "Select",
    "label": "Payment Method",
-   "options": "Cash\nCard\nCheque\nCredit\nOther"
+   "options": "Cash\nCard\nOther"
   },
   {
-   "fieldname": "purcased_by",
-   "fieldtype": "Link",
-   "label": "Purcased By",
-   "options": "Customer"
-  },
-  {
-   "fetch_from": "purcased_by.payment_terms",
-   "fieldname": "payment_terms",
-   "fieldtype": "Select",
-   "label": "Payment Terms"
-  },
-  {
-   "fieldname": "delivery_date",
-   "fieldtype": "Date",
-   "label": "Delivery Date"
-  },
-  {
-   "default": "0",
-   "fieldname": "discountspromotions",
-   "fieldtype": "Check",
-   "label": "Discounts/Promotions"
-  },
-  {
-   "fieldname": "discountspromotions_code",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Discounts/Promotions code",
-   "options": "Discount Code"
-  },
-  {
-   "fieldname": "column_break_egen",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "productservice_name.current_selling_price",
-   "fieldname": "product_price",
-   "fieldtype": "Read Only",
-   "label": "Product Price "
-  },
-  {
-   "fieldname": "final_price_section",
-   "fieldtype": "Section Break",
-   "label": "Product Price"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Purchase",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fetch_from": "productservice_name.category",
-   "fieldname": "product_category",
-   "fieldtype": "Read Only",
-   "label": "Product Category"
-  },
-  {
-   "fetch_from": "discountspromotions_code.discount_percentage",
-   "fieldname": "discount_percentage",
-   "fieldtype": "Read Only",
-   "hidden": 1,
-   "label": "Discount Percentage"
-  },
-  {
-   "fieldname": "column_break_tati",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_dvee",
+   "fieldname": "section_break_gkur",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "final_price",
-   "fieldtype": "Read Only",
-   "label": "Final Price"
+   "fieldname": "list_of_items",
+   "fieldtype": "Table",
+   "label": "List of Items",
+   "options": "Items"
   },
   {
-   "fetch_from": "productservice_name.tax_rate",
-   "fieldname": "tax_percentage",
-   "fieldtype": "Read Only",
-   "label": "Tax Percentage"
+   "fieldname": "section_break_c5rq",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_rkls",
+   "fieldname": "total_quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nuar",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "purchase_by.full_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_tdnz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_nzsf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_products_quantity",
+   "fieldtype": "Int",
+   "label": "Total Products Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_services_quantity",
+   "fieldtype": "Int",
+   "label": "Total Services Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_products_price",
+   "fieldtype": "Int",
+   "label": "Total Products Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_services_price",
+   "fieldtype": "Int",
+   "label": "Total Services Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "Walk-In\nAppointment"
+  },
+  {
+   "fieldname": "branch_name",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Branch Name",
+   "options": "Branch 1\nBranch 2\nBranch 3\nBranch 4\nBranch 5"
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-03-11 14:40:47.741633",
+ "modified": "2024-03-22 15:28:26.391262",
  "modified_by": "Administrator",
  "module": "Billing App",
  "name": "Purchase",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -158,11 +155,13 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

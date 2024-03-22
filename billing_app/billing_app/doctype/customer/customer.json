@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:CUS-{YYYY}-{MM}-{DD}-{#####}",
+ "autoname": "format:CUS-{###}",
  "creation": "2024-03-05 19:44:52.471423",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "customer_name_section",
+  "prefix",
+  "column_break_vbma",
   "first_name",
   "column_break_vpax",
   "middle_name",
@@ -21,19 +23,17 @@
   "alternative_mobile_number",
   "alternative_email",
   "address_details_section",
-  "permanent_address",
-  "column_break_clew",
-  "billing_address",
-  "check_if_billing_address_is_different_from_permanent_address",
-  "column_break_mbgf",
-  "shipping_address",
-  "check_if_shipping_address_is_different_from_permanent_address",
+  "door_number",
+  "street_name",
+  "column_break_bvom",
+  "area",
+  "city",
+  "column_break_ofcj",
+  "state",
+  "zipcode",
   "other_details_section",
-  "tax_id",
-  "credit_limit",
-  "column_break_spzc",
-  "payment_terms",
-  "customer_category"
+  "date",
+  "created_bby"
  ],
  "fields": [
   {
@@ -56,17 +56,18 @@
    "fieldname": "full_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Full Name"
+   "label": "Full Name",
+   "read_only": 1
   },
   {
    "fieldname": "mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "label": "Mobile Number ",
    "reqd": 1
   },
   {
    "fieldname": "alternative_mobile_number",
-   "fieldtype": "Int",
+   "fieldtype": "Phone",
    "label": "Alternative Mobile Number"
   },
   {
@@ -79,57 +80,6 @@
    "fieldname": "alternative_email",
    "fieldtype": "Data",
    "label": "Alternative Email"
-  },
-  {
-   "fieldname": "permanent_address",
-   "fieldtype": "Small Text",
-   "label": "Permanent Address",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "check_if_billing_address_is_different_from_permanent_address",
-   "fieldtype": "Check",
-   "label": "Check if Billing Address is different from Permanent Address"
-  },
-  {
-   "fieldname": "billing_address",
-   "fieldtype": "Small Text",
-   "label": "Billing Address",
-   "read_only": 1
-  },
-  {
-   "fieldname": "shipping_address",
-   "fieldtype": "Small Text",
-   "label": "Shipping Address",
-   "read_only": 1
-  },
-  {
-   "fieldname": "tax_id",
-   "fieldtype": "Data",
-   "label": "Tax ID"
-  },
-  {
-   "default": "Upon Receipt",
-   "fieldname": "payment_terms",
-   "fieldtype": "Select",
-   "label": "Payment Terms",
-   "options": "Net 30\nUpon Receipt",
-   "read_only": 1
-  },
-  {
-   "fieldname": "credit_limit",
-   "fieldtype": "Int",
-   "label": "Credit Limit",
-   "read_only": 1
-  },
-  {
-   "default": "New Customer",
-   "fieldname": "customer_category",
-   "fieldtype": "Select",
-   "label": "Customer Category",
-   "options": "New Customer\nWholesaler\nVIP",
-   "read_only": 1
   },
   {
    "fieldname": "customer_name_section",
@@ -147,7 +97,8 @@
   {
    "fieldname": "customer_full_name_section",
    "fieldtype": "Section Break",
-   "label": "Customer Full Name"
+   "label": "Customer Full Name",
+   "read_only": 1
   },
   {
    "fieldname": "contact_information_section",
@@ -164,32 +115,75 @@
    "label": "Address Details"
   },
   {
-   "fieldname": "column_break_clew",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_mbgf",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "other_details_section",
    "fieldtype": "Section Break",
    "label": "Other Details"
   },
   {
-   "fieldname": "column_break_spzc",
+   "fieldname": "prefix",
+   "fieldtype": "Select",
+   "label": "Prefix",
+   "options": "Mr.\nMs.\nMrs.\nDr."
+  },
+  {
+   "fieldname": "column_break_vbma",
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "check_if_shipping_address_is_different_from_permanent_address",
-   "fieldtype": "Check",
-   "label": "Check if Shipping Address is different from Permanent Address"
+   "fieldname": "door_number",
+   "fieldtype": "Data",
+   "label": "Door Number"
+  },
+  {
+   "fieldname": "street_name",
+   "fieldtype": "Data",
+   "label": "Street Name"
+  },
+  {
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State "
+  },
+  {
+   "fieldname": "zipcode",
+   "fieldtype": "Int",
+   "label": "Zipcode"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bvom",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ofcj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_bby",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-11 15:10:20.853007",
+ "modified": "2024-03-22 13:29:58.837737",
  "modified_by": "Administrator",
  "module": "Billing App",
  "name": "Customer",
@@ -211,5 +205,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }

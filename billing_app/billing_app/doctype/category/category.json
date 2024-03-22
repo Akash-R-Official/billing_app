@@ -13,7 +13,6 @@
   {
    "fieldname": "category_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Category Name",
    "reqd": 1,
    "unique": 1
@@ -21,12 +20,13 @@
   {
    "fieldname": "category_tax",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Category Tax"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-11 14:35:59.997508",
+ "modified": "2024-03-15 20:38:43.766206",
  "modified_by": "Administrator",
  "module": "Billing App",
  "name": "Category",
