@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-04-02 17:59:29.981481",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-04-02 17:59:29.981481",
+ "modified_by": "Administrator",
+ "module": "Billing App",
+ "name": "billing-page",
+ "owner": "Administrator",
+ "page_name": "billing-page",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Billing Page"
+}
