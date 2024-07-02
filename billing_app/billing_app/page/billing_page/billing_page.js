@@ -153,6 +153,47 @@ frappe.pages['billing-page'].on_page_load = function (wrapper) {
 	}
 
 
+	function make_chart(context) {
+		const labels = context.labels; // Array of branch names
+		const values = context.values; // Array of grand totals
+
+		// Preparing data in the format expected by Frappe Charts
+		let data = {
+			labels: labels,
+			datasets: [{
+				name: 'Total Purchases', // Label for the dataset
+				values: values
+			}]
+		};
+
+		context.last_chart_type = 'bar'; // Assuming we're using a bar chart
+
+		// Ensure the chart wrapper is visible
+		context.$charts_wrapper.removeClass('hidden');
+
+		// Check if the parent element exists before creating the chart
+		const parentElement = context.$charts_wrapper.find('.charts-inner-wrapper')[0];
+		if (!parentElement) {
+			console.error("No parent element found to render the chart.");
+			return;
+		}
+
+		// Creating the chart
+		context.chart = new frappe.Chart(parentElement, {
+			title: 'Purchases by Branch',
+			data: data,
+			type: 'bar',
+			truncateLegends: 1,
+			colors: ['#3498db'], // Customize chart color
+			axisOptions: {
+				shortenYAxisNumbers: 1
+			},
+			tooltipOptions: {
+				formatTooltipY: value => `${value.toFixed(2)} USD` // Format tooltips to show values with 2 decimals
+			}
+		});
+	}
+
 	function renderChart(data) {
 		console.log("Data received:", data);
 
@@ -168,33 +209,20 @@ frappe.pages['billing-page'].on_page_load = function (wrapper) {
 		console.log("Labels:", labels);
 		console.log("Values:", values);
 
+		// Example usage in the context
+		$(document).ready(function () {
+			// Simulate the object context (`this`)
+			const context = {
+				labels: labels,
+				values: values,
+				$charts_wrapper: $('#branch-chart'), // Reference the div by id
+				doctype: 'Purchases',
+				make_chart: make_chart // Reference to the function
+			};
 
-		const dataa = {
-			labels: ["12am-3am", "3am-6pm", "6am-9am", "9am-12am",
-				"12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"
-			],
-			datasets: [
-				{
-					name: "Some Data", chartType: "bar",
-					values: [25, 40, 30, 35, 8, 52, 17, -4]
-				},
-				{
-					name: "Another Set", chartType: "bar",
-					values: [25, 50, -10, 15, 18, 32, 27, 14]
-				}
-			]
-		}
-
-		const branchChart = new Chart("#branch-chart", {  // or a DOM element,
-			// new Chart() in case of ES6 module with above usage
-			title: "My Awesome Chart",
-			data: dataa,
-			type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-			height: 250,
-			colors: ['#7cd6fd', '#743ee2']
-		})
-
-
+			// Call the function in the context
+			context.make_chart(context);
+		});
 	}
 
 
@@ -222,7 +250,7 @@ frappe.pages['billing-page'].on_page_load = function (wrapper) {
 
 }
 
-// Render chart using Frappe Charts
+
 // var chart = new frappe.Chart("#branch-chart", {
 // 	data: {
 // 		labels: labels,
@@ -240,4 +268,28 @@ frappe.pages['billing-page'].on_page_load = function (wrapper) {
 // 		xIsSeries: true // Treat x-values as series names
 // 	}
 // });
-// Empty data array
+
+// const dataa = {
+// 	labels: ["12am-3am", "3am-6pm", "6am-9am", "9am-12am",
+// 		"12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"
+// 	],
+// 	datasets: [
+// 		{
+// 			name: "Some Data", chartType: "bar",
+// 			values: [25, 40, 30, 35, 8, 52, 17, -4]
+// 		},
+// 		{
+// 			name: "Another Set", chartType: "bar",
+// 			values: [25, 50, -10, 15, 18, 32, 27, 14]
+// 		}
+// 	]
+// }
+
+// const options = {
+// 	title: "My Awesome Chart",
+// 	data: dataa,
+// 	type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+// 	height: 250,
+// 	colors: ['#7cd6fd', '#743ee2']
+// }
+// const chart = new Chart("#branch-chart", options)
